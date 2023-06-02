@@ -41,14 +41,14 @@ func main() {
 	for !rl.WindowShouldClose() {
 		// Update
 		//----------------------------------------------------------------------------------
-		//if rl.IsWindowResized() {
-		//	screenWidth = int32(rl.GetScreenWidth())
-		//	screenHeight = int32(rl.GetScreenHeight())
-		//
-		//	resolution[0] = float32(screenWidth)
-		//	resolution[1] = float32(screenHeight)
-		//	rl.SetShaderValue(shader, resLoc, resolution, rl.ShaderUniformVec2)
-		//}
+		if rl.IsWindowResized() {
+			screenWidth = int32(rl.GetScreenWidth())
+			screenHeight = int32(rl.GetScreenHeight())
+
+			resolution[0] = float32(screenWidth)
+			resolution[1] = float32(screenHeight)
+			rl.SetShaderValue(shader, resLoc, resolution, rl.ShaderUniformVec2)
+		}
 
 		if rl.IsKeyPressed(rl.KeyF1) {
 			controlsShowing = !controlsShowing
